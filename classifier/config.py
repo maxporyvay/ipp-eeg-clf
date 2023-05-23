@@ -1,7 +1,7 @@
-LOCALIZED = False
+LOCALIZED = True
 
 if LOCALIZED:
-    DATA_PATH = 'LocalizedM3-cleared'
+    DATA_PATH = 'datasets/Localized'
     TARGET_CHANNELS = 13
     TARGET_CHANNEL_SETS = [
         ['EEG F7-A1', 'EEG F7-M1'],
@@ -19,7 +19,7 @@ if LOCALIZED:
         ['L El 3 3']
     ]
 else:
-    DATA_PATH = 'Cleared'
+    DATA_PATH = 'datasets/Non_localized'
     TARGET_CHANNELS = 4
     TARGET_CHANNEL_SETS = [
         ['EEG F7-A1', 'EEG F7-M1'],
@@ -28,8 +28,8 @@ else:
         ['EEG C3-A1', 'EEG C3-M1']
     ]
 
-OUT_PATH       = f'{DATA_PATH}-converted'
-CLEARED_PATH   = OUT_PATH
+CLEARED_PATH   = DATA_PATH
+OUT_PATH       = DATA_PATH
 VISUAL_SUBPATH = 'Visual'
 AUDIAL_SUBPATH = 'Audial'
 
@@ -54,16 +54,7 @@ if LOCALIZED:
 # List of EDF files to use
 # These files are taken from CLEARED_PATH/VISUAL_SUBPATH and CLEARED_PATH/AUDIAL_SUBPATH
 INPUT_EDF_LIST = [
-    'Antonova',
-    'BazvlkD',
-    'DashaPap',
-    'Drachenko',
-    'Gordokov',
-    'Manenkov',
-    'PavluhinN',
-    'RylkovS',
-    'Sazonova',
-    'VinickiD',
+    'Antonova'
 ]
 
 # Flags
@@ -91,7 +82,7 @@ test_config = dotdict()
 ###################################################
 
 # Enable / disable config
-BINARY_SINGLE = True
+BINARY_SINGLE = False
 
 if BINARY_SINGLE:
     test_config = dotdict()
@@ -314,7 +305,7 @@ if BINARY_ALL:
 ###################################################
 
 # Enable / disable config
-MULTICLASS_SINGLE = False
+MULTICLASS_SINGLE = True
 
 if MULTICLASS_SINGLE:
     test_config = dotdict()

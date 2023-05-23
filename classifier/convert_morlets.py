@@ -48,4 +48,4 @@ def convert_morlets():
             print(f'Saving morlet data for {edf_file}')
             normalized_labels = normalize_labels(labels)
             grouped_morlet_list = group_morlet_by_phoneme(normalized_labels, morlet)
-            #save_person_grouped_morlet_list(morlet_dir, person, grouped_morlet_list)
+            save_person_grouped_morlet_list(morlet_dir, person, grouped_morlet_list)
